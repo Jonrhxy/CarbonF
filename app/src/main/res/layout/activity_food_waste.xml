@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FoodWasteActivity"
+    android:background="#F3F9F1">
+
+    <!-- Food Waste Icon and Title -->
+
+    <!-- Question Text -->
+    <ImageView
+        android:id="@+id/iv_food_waste_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Food Waste Icon"
+        android:src="@drawable/ic_food_waste"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Question Text for Food Waste -->
+
+    <TextView
+        android:id="@+id/tv_food_waste_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:text="Food Waste"
+        android:textColor="#4CAF50"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_food_waste_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toEndOf="@+id/iv_food_waste_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tv_food_waste_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="How often do you leave food uneaten or discard leftovers?"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_food_waste_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="16dp" />
+
+    <!-- Radio Buttons for Food Waste Options -->
+    <RadioGroup
+        android:id="@+id/radio_group_food_waste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_food_waste_question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <RadioButton
+            android:id="@+id/rb_never"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Never"
+            android:textColor="#000"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <RadioButton
+            android:id="@+id/rb_rarely"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rarely"
+            android:textColor="#000"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <RadioButton
+            android:id="@+id/rb_sometimes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sometimes"
+            android:textColor="#000"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <RadioButton
+            android:id="@+id/rb_often"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Often"
+            android:textColor="#000"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <RadioButton
+            android:id="@+id/rb_always"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Always"
+            android:textColor="#000"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+    </RadioGroup>
+
+    <!-- Calculate Carbon Button -->
+    <Button
+        android:id="@+id/btn_calculate_waste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate Carbon"
+        android:textColor="#FFFFFF"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_food_waste"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

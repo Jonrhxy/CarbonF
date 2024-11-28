@@ -21,28 +21,19 @@ public class TotalCarbonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Enable edge-to-edge functionality
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_total_carbon);
-
-        // Apply window insets for proper padding
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         // Initialize UI elements
         TextView tvTotalCarbon = findViewById(R.id.tv_total_carbon);
         Button btnBack = findViewById(R.id.btn_back);
 
-        // Get the total carbon footprint from the intent
-        Intent intent = getIntent();
-        double totalCarbon = intent.getDoubleExtra("total_carbon", 0.0);
+        // Retrieve the total carbon footprint passed from FoodWasteActivity
+        double totalCarbon = getIntent().getDoubleExtra("total_carbon", 0.0);
 
-        // Log the retrieved total carbon footprint for debugging
+        // Log the received total carbon footprint for debugging
         Log.d(TAG, "Received total carbon footprint: " + totalCarbon);
 
-        // Set the total carbon footprint value in the TextView
+        // Display the total carbon footprint in the TextView
         tvTotalCarbon.setText(String.format("%.2f g CO₂", totalCarbon));
 
         // Back button click listener
@@ -54,3 +45,4 @@ public class TotalCarbonActivity extends AppCompatActivity {
         });
     }
 }
+

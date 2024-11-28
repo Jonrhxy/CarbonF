@@ -42,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
         CheckBox cbBicycle = findViewById(R.id.checkbox_bicycle);
         Button btnContinue = findViewById(R.id.btn_continue);
 
+        // Log initialization to check if views are null
+        Log.d("MainActivity", "SeekBar: " + seekBar);
+        Log.d("MainActivity", "TextView: " + tvDistance);
+        Log.d("MainActivity", "CheckBox (Tricycle): " + cbTricycle);
+        Log.d("MainActivity", "CheckBox (Jeep): " + cbJeep);
+        Log.d("MainActivity", "Button: " + btnContinue);
+
         // Update distance value based on SeekBar progress
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -83,12 +90,10 @@ public class MainActivity extends AppCompatActivity {
                 totalCarbonFootprint += 0; // Bicycles emit 0g CO2 per km
             }
 
-            // Log the calculated total carbon footprint for debugging
-            Log.d("MainActivity", "Calculated Total Carbon Footprint: " + totalCarbonFootprint);
 
-            // Navigate to TotalCarbonActivity and pass the total carbon footprint
-            Intent intent = new Intent(MainActivity.this, TotalCarbonActivity.class);
-            intent.putExtra("total_carbon", totalCarbonFootprint); // Use consistent key
+            // Pass the calculated carbon footprint to the next activity
+            Intent intent = new Intent(MainActivity.this, FoodCarbonActivity.class);
+            intent.putExtra("transportation_carbon", totalCarbonFootprint); // Passing the total carbon footprint
             startActivity(intent);
         });
     }

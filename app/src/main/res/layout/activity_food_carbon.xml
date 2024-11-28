@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FoodCarbonActivity"
+    android:background="#F3F9F1">
+
+    <!-- Food Icon and Title -->
+    <ImageView
+        android:id="@+id/iv_food_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Food Icon"
+        android:src="@drawable/ic_food"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_food_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Food"
+        android:textColor="#4CAF50"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_food_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toEndOf="@+id/iv_food_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Question Text -->
+    <TextView
+        android:id="@+id/tv_food_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="How many meals do you consume on campus per week? (in kg)"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_food_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="16dp" />
+
+    <!-- Food Image -->
+    <ImageView
+        android:id="@+id/iv_food_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/sample_food_image"
+        android:contentDescription="Food Image"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@+id/tv_food_question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Selected Weight Text -->
+    <TextView
+        android:id="@+id/tv_food_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5kg"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/iv_food_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Slider -->
+    <SeekBar
+        android:id="@+id/seekbar_food"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:progress="5"
+        android:max="50"
+        android:progressTint="#4CAF50"
+        app:layout_constraintTop_toBottomOf="@+id/tv_food_weight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="16dp" />
+
+    <!-- Calculate Carbon Button -->
+    <Button
+        android:id="@+id/btn_calculate_carbon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate Carbon Footprint"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/seekbar_food"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp" />
+
+    <!-- Display Carbon Footprint -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
